@@ -19,18 +19,4 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::middleware('auth')
-->name('admin.')
-->prefix('admin')
-->namespace('Admin')
-->group(function(){
-    // Qui inserisco le rotte semplificate
-    Route::get('/','HomeController@index')->name('index');
-    // Sotto inserisco le rotte della CRUD
-
-});
-
-
-
-
-// ->get('/admin', 'Admin\HomeController@index')->name('index');
+Route::middleware('auth')->get('/admin', 'Admin\HomeController@index')->name('index');
