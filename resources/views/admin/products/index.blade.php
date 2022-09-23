@@ -22,13 +22,18 @@
               <td>{{$product->slug}}</td>
               <td>{{$product->price}}&euro;</td>
               <td>
-                <img class="products_img" src="{{File::exists('storage/'. $product->image) ? asset('storage/' . $product->image) : $product->image}}" alt="">
+                <img class="products_img" src="{{File::exists('storage/'. $product->image) ? asset('storage/' . $product->image) : $product->image}}" alt="{{$product->name}}">
               </td>
               <td>{{$product->description}}</td>
               <td class="actions">
                 <div class="cd-container">
-                    <button type="button" class="btn btn-primary my-1">Mostra</button>
-                    <button type="button" class="btn btn-success my-1">Modifica</button>
+                    {{-- MOSTRA --}}
+                    <a type="button"
+                    class="btn btn-primary my-1 redirecting"
+                    href="{{route('admin.products.show', $product)}}">
+                    Dettagli
+                    </a>
+                    <a type="button" class="btn btn-success my-1 redirecting">Modifica</a>
                     <button type="button" class="btn btn-danger my-1">Cancella</button>
                 </div>
               </td>

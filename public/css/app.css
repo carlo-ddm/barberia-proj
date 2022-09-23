@@ -10988,3 +10988,28 @@ a.text-dark:focus {
   flex-direction: column;
 }
 
+.redirecting {
+  color: white !important;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+.heading {
+  color: cadetblue;
+}
+
+.cd-card {
+  width: 100%;
+  padding: 5px;
+}
+
+.cd-card img {
+  width: 50%;
+}
+

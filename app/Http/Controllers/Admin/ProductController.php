@@ -46,9 +46,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        // dd($product);
+        if($product){
+            return view('admin.products.show', compact('product'));
+        } else {
+            abort(404, 'Errore 404 | Pagina non trovata');
+        }
     }
 
     /**
