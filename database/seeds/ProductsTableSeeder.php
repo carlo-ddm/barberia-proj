@@ -15,8 +15,9 @@ class ProductsTableSeeder extends Seeder
     {
         for($i = 0; $i < 50; $i++){
             $new_product = new Product();
-            $new_product->title = $faker->sentence();
-            $new_product->slug = Product::slugGenerator($new_product->title);
+            $new_product->name = $faker->sentence();
+            $new_product->slug = Product::slugGenerator($new_product->name);
+            $new_product->price = $faker->randomFloat(2,5,30);
             $new_product->image = 'https://cdnimg.lanaika.com/4774-thickbox_default/kit-da-viaggio-shave-kit-da-viaggio-proraso.jpg';
             $new_product->description = $faker->text(255);
             $new_product->save();

@@ -8,6 +8,7 @@
             <th scope="col">Id</th>
             <th scope="col">Title</th>
             <th scope="col">Slug</th>
+            <th scope="col">Price</th>
             <th scope="col">Image</th>
             <th scope="col">Description</th>
             <th scope="col">Actions</th>
@@ -17,8 +18,9 @@
             @foreach ($products as $product)
             <tr>
               <td>{{$product->id}}</td>
-              <td>{{$product->title}}</td>
+              <td>{{$product->name}}</td>
               <td>{{$product->slug}}</td>
+              <td>{{$product->price}}&euro;</td>
               <td>
                 <img class="products_img" src="{{File::exists('storage/'. $product->image) ? asset('storage/' . $product->image) : $product->image}}" alt="">
               </td>
