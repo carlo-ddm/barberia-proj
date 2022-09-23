@@ -24,9 +24,11 @@
               </td>
               <td>{{$product->description}}</td>
               <td class="actions">
-                <button type="button" class="btn btn-primary">Show</button>
-                <button type="button" class="btn btn-success">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+                <div class="cd-container">
+                    <button type="button" class="btn btn-primary my-1">Mostra</button>
+                    <button type="button" class="btn btn-success my-1">Modifica</button>
+                    <button type="button" class="btn btn-danger my-1">Cancella</button>
+                </div>
               </td>
             </tr>
             @endforeach
