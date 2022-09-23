@@ -62,9 +62,13 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        if($product){
+            return view('admin.products.edit', compact('product'));
+        } else {
+            abort(404, 'Errore 404 | Pagina non trovata');
+        }
     }
 
     /**

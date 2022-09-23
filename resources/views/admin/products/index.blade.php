@@ -35,7 +35,10 @@
                     href="{{route('admin.products.show', $product)}}">
                     Dettagli
                     </a>
-                    <a type="button" class="btn btn-success my-1 redirecting">Modifica</a>
+                    {{-- MODIFICA --}}
+                    <a type="button"
+                    class="btn btn-success my-1 redirecting"
+                    href="{{route('admin.products.edit',$product)}}">Modifica</a>
                     <button type="button" class="btn btn-danger my-1">Cancella</button>
                 </div>
               </td>
