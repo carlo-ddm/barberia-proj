@@ -16,14 +16,14 @@
         <tbody>
             @foreach ($products as $product)
             <tr>
-              <th>{{$product->id}}</th>
-              <th>{{$product->title}}</th>
+              <td>{{$product->id}}</td>
+              <td>{{$product->title}}</td>
               <td>{{$product->slug}}</td>
               <td>
-                <img src="{{File::exists('storage/'. $product->image) ? asset('storage/' . $product->image) : $product->image}}" alt="">
+                <img class="products_img" src="{{File::exists('storage/'. $product->image) ? asset('storage/' . $product->image) : $product->image}}" alt="">
               </td>
               <td>{{$product->description}}</td>
-              <td>
+              <td class="actions">
                 <button type="button" class="btn btn-primary">Show</button>
                 <button type="button" class="btn btn-success">Edit</button>
                 <button type="button" class="btn btn-danger">Delete</button>
@@ -32,5 +32,6 @@
             @endforeach
         </tbody>
     </table>
+    {{$products->links()}}
 </div>
 @endsection

@@ -4,7 +4,11 @@
 // Variables
 @import 'variables';
 
+// Customized Bootstrap
+@import 'resources/sass/customized_bootstrap/customized_bootstrap';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-
+// PRODUCTS INDEX
+@import 'resources/sass/products/index'
