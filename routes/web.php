@@ -25,5 +25,6 @@ Route::middleware('auth')
 ->namespace('Admin')
 ->group(function(){
     Route::get('/', 'HomeController@index')->name('index');
+    Route::get('users', 'UserController@index')->name('users');
     Route::resource('products', 'ProductController');
 });
