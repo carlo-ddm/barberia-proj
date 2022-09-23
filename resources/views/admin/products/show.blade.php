@@ -4,12 +4,20 @@
 <div class="container">
     <ul>
         <li>
-            <span class="heading">ID: </span>
+            <span class="heading">ID Prodotto: </span>
             {{$product->id}}
         </li>
         <li>
             <span class="heading">Nome: </span>
             {{$product->name}}
+        </li>
+        <li>
+            <span class="heading">Slug: </span>
+            {{$product->slug}}
+        </li>
+        <li>
+            <span class="heading">Brand: </span>
+            {{$product->brand}}
         </li>
         <li>
             <span class="heading">Prezzo: </span>
