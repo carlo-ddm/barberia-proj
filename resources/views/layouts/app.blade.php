@@ -26,10 +26,10 @@
                 <a class="navbar-brand" href="{{ route('home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a href="{{route('admin.users')}}">
+                <a class="mx-2" href="{{route('admin.users')}}">
                     Utenti
                 </a>
-                <a href="{{route('admin.products.index')}}">
+                <a class="mx-2" href="{{route('admin.products.index')}}">
                     Prodotti
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
