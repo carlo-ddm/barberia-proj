@@ -26,9 +26,6 @@
                 <a class="navbar-brand" href="{{ route('home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <a class="mx-2" href="{{route('admin.users')}}">
-                    Utenti
-                </a>
                 <a class="mx-2" href="{{route('admin.products.index')}}">
                     Prodotti
                 </a>
