@@ -1,22 +1,64 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
-    <form>
+    {{-- @dump($product) --}}
+
+    <h1>Modifica: {{$product->name}}</h1>
+    <form action="{{route('admin.products.update', $product)}}">
+        @csrf
+        @method('PUT')
+
+        {{-- Nome --}}
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <label for="name" class="form-label">Nome del prodotto</label>
+          <input
+          type="text"
+          class="form-control w-50 h-50"
+          id="name"
+          value="{{old('name',$product->name)}}">
         </div>
+
+        {{-- Brand --}}
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="brand" class="form-label">Brand</label>
+            <input
+            type="text"
+            class="form-control w-50 h-50"
+            id="brand"
+            value="{{old('brand',$product->brand)}}">
         </div>
-        <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+        {{-- Prezzo --}}
+        <div class="mb-3">
+            <label for="price" class="form-label">Prezzo</label>
+            <input
+            type="text"
+            class="form-control w-50 h-50"
+            id="price"
+            value="{{old('price',$product->price)}}">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        {{-- Immagine --}}
+        <div class="mb-3">
+            <label for="price" class="form-label d-block">Immagine</label>
+            <input
+            type="file"
+            accept="image/*">
+        </div>
+
+         {{-- Immagine --}}
+         <div class="mb-3">
+            <label for="price" class="form-label d-block">Immagine</label>
+            <textarea
+            name="price"
+            id=""
+            cols="30"
+            rows="10"
+            class="w-50 h-50"
+            >{{$product->description}}</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Modifica</button>
       </form>
-      {{-- @dump($product) --}}
 </div>
 @endsection
