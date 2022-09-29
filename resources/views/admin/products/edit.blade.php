@@ -4,7 +4,9 @@
     {{-- @dump($product) --}}
 
     <h1>Modifica: {{$product->name}}</h1>
-    <form action="{{route('admin.products.update', $product)}}">
+    <form
+    action="{{route('admin.products.update', $product)}}"
+    method="post">
         @csrf
         @method('PUT')
 
@@ -46,12 +48,12 @@
             accept="image/*">
         </div>
 
-         {{-- Immagine --}}
+         {{-- Descrizione --}}
          <div class="mb-3">
-            <label for="price" class="form-label d-block">Immagine</label>
+            <label for="price" class="form-label d-block">Descrizione</label>
             <textarea
             name="price"
-            id=""
+            id="price"
             cols="30"
             rows="10"
             class="w-50 h-50"

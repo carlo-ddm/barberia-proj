@@ -7,8 +7,8 @@ use Illuminate\Support\Str;
 
 class Product extends Model
 {
-    public static function slugGenerator($title){
-        $slug = Str::slug($title, '-');
+    public static function slugGenerator($name){
+        $slug = Str::slug($name, '-');
         $prodotto_esistente = Product::where('slug',$slug)->first();
         $slug_base = $slug;
         $c = 1;
@@ -19,4 +19,12 @@ class Product extends Model
         }
         return $slug;
     }
+
+    protected $fillable = [
+        'name',
+        'brand',
+        'price',
+        'image',
+        'description'
+    ];
 }

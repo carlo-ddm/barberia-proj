@@ -78,9 +78,19 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        dd($request);
+        $data = $request->all();
+        dd($data);
+        if($product->name != $data['name']){
+            $data['slug'] = $this->slugGenerator($data['name']);
+        } else {
+            $data['slug'] = $product->slug;
+        }
+        $product->fill($data);
+        $product->update($data);
+        return redirect()->route('admin.products.show', $product);
     }
 
     /**
